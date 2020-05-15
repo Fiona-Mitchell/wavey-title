@@ -1,0 +1,74 @@
+:root{
+
+  --background: #092327;
+  --wave: #0B5351;
+}
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--background);
+}
+
+img{
+  position: absolute;
+  height: 10rem;
+  width: 30rem;
+  outline: 0;
+  overflow: hidden;
+}
+
+
+.box{
+  position: relative;
+  background: var(--background);
+  height: 10rem;
+  width: 35rem;
+  outline: 0;
+  overflow: hidden;
+  border: 0.08rem solid white;
+}
+
+
+.box::before {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: red;
+}
+
+
+.box::after{
+  content: "";
+  position: absolute;
+  bottom: -55%;
+  left: -30%;
+  height: 55rem;
+  width: 55rem;
+  background: #0B5351;
+  border-radius: 45%;
+  animation: wave 6s ease-in-out infinite;
+}
+
+@keyframes wave {
+
+  0% {
+    transform: translateY(0) rotate(0);
+  }
+
+
+100% {
+  transform: translateY(-50%) rotate(450deg);
+}
+
+}
